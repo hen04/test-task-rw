@@ -1,0 +1,34 @@
+extends template.jade
+
+block title
+  title Тестовое задание для Realweb
+
+block content
+  .wrapper
+    h1 Мои настройки
+    .content-l
+      form(method="POST", action="/")
+        .content-item
+          h2 Личные данные
+          +forminfo('Имя', 'text')
+          +forminfo('Фамилия', 'text')
+          +forminfo('Отчество', 'text')
+          +forminfo('Дата рождения', 'text')
+        .content-item
+          h2 Контактные данные
+          +forminfo('Телефон', 'text')
+          +forminfo('Почтовый адрес', 'e-mail')
+          +forminfo('Пароль [********]', 'password')
+        .content-item
+          h2 Адресная книга
+        .content-item
+          h2 Подписки и уведомления
+          .content-item__check
+            input(type="checkbox", id="ch-email", class="inp-check")
+            label(for="ch-email") Оповещать меня о текущих акциях по e-mail
+          .content-item__check
+            input(type="checkbox", id="ch-sms", class="inp-check")
+            label(for="ch-sms") Оповещать меня о текущих акциях по sms
+
+    .content-r
+      | тест

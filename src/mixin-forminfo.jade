@@ -1,0 +1,11 @@
+mixin forminfo(value, type)
+
+          .content-item__str
+            .content-item__str__txt.js-txt(data-name=value)
+              .content-item__str__txt__info
+                span.change-txt(data-name="name")=value
+                span.change-btn изменить
+            .content-item__str__input.js-input(data-name=value)
+              .content-item__str__txt__info
+                input(type=type, data-name="name")
+                span.save сохранить
