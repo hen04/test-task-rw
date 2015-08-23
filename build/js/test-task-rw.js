@@ -2,31 +2,48 @@
 
   $(function(){
 
-
     (function(){
 
+      // изменить личные данные
       $.fn.changeValue = function(){
       var $this = $(this)
         $this
-          .parents('.js-txt')
-            .hide();
+          .prev()
+            .prev()
+              .hide();
         $this
-          .parents('.content-item__str')
-            .find('.js-input')
-              .show()
+          .prev()
+            .show();
+
+        $this
+          .text("сохранить")
+            .addClass('save');
       }
+
+      $('.content-item__str__txt').on('click', '.change-btn', function(){
+        var $this = $(this)
+        $this.changeValue();
+      });
+
+      // сохранить введенные данные
       $.fn.saveValue = function(){
         var $this = $(this)
+
         $this
-          .parents('.js-input')
+          .prev()
             .hide();
         $this
-          .parents('.content-item__str')
-            .find('.js-txt')
-              .show()
+          .prev()
+            .prev()
+              .show();
+
+        $this
+          .text("изменить")
+            .removeClass('save');
 
         // получаем значение value в inpute
         $input = $this.prev().val();
+
 
         // вставляем его в .change-txt
         if ($.isEmptyObject($input)) {
@@ -41,60 +58,69 @@
                 .text($input)
                   .addClass('chosen');
         }
-
-        
-
       }
 
-      $('.content-item__str__txt__info').on('click', '.change-btn', function(){
-        var $this = $(this)
-        $this.changeValue();
-      });
-      $('.content-item__str__txt__info').on('click', '.save', function(){
+      $('.content-item__str__txt').on('click', '.save', function(){
         var $this = $(this)
         $this.saveValue();
       });
 
+
+
+      $('.change-addr').on('click', '.btn-addr', function(event){
+        event.preventDefault();
+      });
+
+
+      // появление кнопки Удалить при клике на адрес
+      $('.change-addr').on('click', '.inp-radio', function(){
+        $this = $(this);
+
+        if ( $this.is(':checked') ) {
+
+          $('.del').hide();
+
+          $this
+            .parent()
+              .find('.del')
+                .show();
+        }
+
+      });
+
+
+      // удаление адреса доставки
+      $.fn.delAddr = function(){
+        $this = $(this);
+
+        $this
+          .parents('.content-item__row')
+            .remove();
+
+      }
+
+      $('.content-item__row').on('click', '.del', function(){
+        var $this = $(this);
+
+        $this.delAddr();
+
+      });
+
+
     })(); 
 
+    $('.phone').mask("+7 (999)-999-99-99");
+    $('.date').mask("99.99.9999");
 
-
-    // $('.content-item__str__txt__info').on('click', '.change-btn', function(){
-    //   var $this = $(this)
-    //   $this
-    //     .parents('.js-txt')
-    //       .hide();
-    //   $this
-    //     .parents('.content-item__str')
-    //       .find('.js-input')
-    //         .show()
-    // });
-
-    // $('.content-item__str__txt__info').on('click', '.save', function(){
-    //   var $this = $(this)
-    //   $this
-    //     .parents('.js-input')
-    //       .hide();
-    //   $this
-    //     .parents('.content-item__str')
-    //       .find('.js-txt')
-    //         .show()
-      
-    //   var val = $('.js-input input').val();
-
-    //   if ($.isEmptyObject(val)) {
-    //     $this
-    //       .parents('.content-item__str')
-    //         .find('.js-input input')
-    //           .val('Введите значение');
-    //   } else {
-    //     $('.change-txt').text(val);
-    //   }
-      
-
-    // });
-
-
+    $('input').each(function(){
+      if ($(this).attr('placeholder') != '') $(this).attr('title', $(this).attr('placeholder'));
+        $(this).bind('click', function(){
+          $(this).attr('placeholder', '');
+        });
+        $(this).bind('blur', function(){
+        $(this).attr('placeholder', $(this).attr('title'));
+      });
+    });
 
   });
 

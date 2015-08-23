@@ -1,11 +1,7 @@
-mixin forminfo(value, type)
+mixin forminfo(value, type, class1)
 
           .content-item__str
-            .content-item__str__txt.js-txt(data-name=value)
-              .content-item__str__txt__info
-                span.change-txt(data-name="name")=value
-                span.change-btn изменить
-            .content-item__str__input.js-input(data-name=value)
-              .content-item__str__txt__info
-                input(type=type, data-name="name")
-                span.save сохранить
+            .content-item__str__txt
+              span.change-txt= value
+              input(type=type, class="inp-change", class=class1)
+              span.change-btn изменить

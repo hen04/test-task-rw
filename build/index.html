@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тестовое задание для Realweb</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/test-task-rw.css">
+  <link rel="stylesheet" href="css/test-task-rw.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="js/jquery.maskedinput.js"></script>
   <script src="js/test-task-rw.js"></script>
 </head>
 <body>
@@ -15,95 +17,80 @@
         <div class="content-item">
           <h2>Личные данные</h2>
           <div class="content-item__str">
-            <div data-name="Имя" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Имя</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Имя" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="text" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">Имя</span>
+              <input type="text" class="inp-change"/><span class="change-btn">изменить</span>
             </div>
           </div>
           <div class="content-item__str">
-            <div data-name="Фамилия" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Фамилия</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Фамилия" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="text" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">Фамилия</span>
+              <input type="text" class="inp-change"/><span class="change-btn">изменить</span>
             </div>
           </div>
           <div class="content-item__str">
-            <div data-name="Отчество" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Отчество</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Отчество" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="text" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">Отчество</span>
+              <input type="text" class="inp-change"/><span class="change-btn">изменить</span>
             </div>
           </div>
           <div class="content-item__str">
-            <div data-name="Дата рождения" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Дата рождения</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Дата рождения" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="text" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">Дата рождения</span>
+              <input type="text" class="inp-change date"/><span class="change-btn">изменить</span>
             </div>
           </div>
         </div>
         <div class="content-item">
           <h2>Контактные данные</h2>
           <div class="content-item__str">
-            <div data-name="Телефон" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Телефон</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Телефон" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="text" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">+7 (___) -__ - __</span>
+              <input type="text" class="inp-change phone"/><span class="change-btn">изменить</span>
             </div>
           </div>
           <div class="content-item__str">
-            <div data-name="Почтовый адрес" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Почтовый адрес</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Почтовый адрес" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="e-mail" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">Почтовый адрес</span>
+              <input type="e-mail" class="inp-change"/><span class="change-btn">изменить</span>
             </div>
           </div>
           <div class="content-item__str">
-            <div data-name="Пароль [********]" class="content-item__str__txt js-txt">
-              <div class="content-item__str__txt__info"><span data-name="name" class="change-txt">Пароль [********]</span><span class="change-btn">изменить</span></div>
-            </div>
-            <div data-name="Пароль [********]" class="content-item__str__input js-input">
-              <div class="content-item__str__txt__info">
-                <input type="password" data-name="name"/><span class="save">сохранить</span>
-              </div>
+            <div class="content-item__str__txt"><span class="change-txt">Пароль [********]</span>
+              <input type="password" class="inp-change"/><span class="change-btn">изменить</span>
             </div>
           </div>
         </div>
         <div class="content-item">
           <h2>Адресная книга</h2>
+          <div class="change-addr">
+            <div class="content-item__row"><span class="change-btn change-addr-btn">изменить</span>
+              <p>Текущий адрес доставки</p>
+            </div>
+            <div class="content-item__row">
+              <input type="radio" name="addr" id="addr-1" class="inp-radio">
+              <label for="addr-1">432 071 Россия, г. Троицк, ул. Ленина д.34. кв.54 </label><span class="del">Удалить</span>
+            </div>
+            <div class="content-item__row">
+              <input type="radio" name="addr" id="addr-2" class="inp-radio">
+              <label for="addr-2">445 086 Россия, г. Керчь, ул. Первого Интернационала д.14. кв.6 </label><span class="del">Удалить</span>
+            </div>
+            <button class="btn-addr">Добавить еще один адрес</button>
+          </div>
         </div>
         <div class="content-item">
           <h2>Подписки и уведомления</h2>
-          <div class="content-item__check">
+          <div class="content-item__row">
             <input type="checkbox" id="ch-email" class="inp-check">
             <label for="ch-email">Оповещать меня о текущих акциях по e-mail</label>
           </div>
-          <div class="content-item__check">
+          <div class="content-item__row">
             <input type="checkbox" id="ch-sms" class="inp-check">
             <label for="ch-sms">Оповещать меня о текущих акциях по sms</label>
           </div>
         </div>
       </form>
     </div>
-    <div class="content-r">тест</div>
+    <div class="content-r">
+      <div class="social">
+        <h3>Социальные сети</h3>
+        <p>Привяжите учетную запись социальной сети и используйте ee для входа</p>
+        <div class="lnk"><a href="#" class="lnk__item lnk__item--fb">Facebook</a><a href="#" class="lnk__item lnk__item--vk">Вконтакте</a><a href="#" class="lnk__item lnk__item--tw">Twitter</a><a href="#" class="lnk__item lnk__item--ok">Одноклассники</a></div>
+      </div>
+    </div>
   </div>
 </body>

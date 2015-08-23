@@ -10,25 +10,46 @@ block content
       form(method="POST", action="/")
         .content-item
           h2 Личные данные
-          +forminfo('Имя', 'text')
-          +forminfo('Фамилия', 'text')
-          +forminfo('Отчество', 'text')
-          +forminfo('Дата рождения', 'text')
+          +forminfo('Имя', 'text', '')
+          +forminfo('Фамилия', 'text', '')
+          +forminfo('Отчество', 'text', '')
+          +forminfo('Дата рождения', 'text', 'date')
         .content-item
           h2 Контактные данные
-          +forminfo('Телефон', 'text')
-          +forminfo('Почтовый адрес', 'e-mail')
-          +forminfo('Пароль [********]', 'password')
+          +forminfo('+7 (___) -__ - __', 'text', 'phone')
+          +forminfo('Почтовый адрес', 'e-mail', '')
+          +forminfo('Пароль [********]', 'password', '')
         .content-item
           h2 Адресная книга
+          .change-addr
+            .content-item__row
+              span.change-btn.change-addr-btn изменить
+              p Текущий адрес доставки
+            .content-item__row
+              input(type="radio", name="addr" id="addr-1", class="inp-radio")
+              label(for="addr-1") 432 071 Россия, г. Троицк, ул. Ленина д.34. кв.54 
+              span.del Удалить
+            .content-item__row
+              input(type="radio", name="addr" id="addr-2", class="inp-radio")
+              label(for="addr-2") 445 086 Россия, г. Керчь, ул. Первого Интернационала д.14. кв.6 
+              span.del Удалить
+            button.btn-addr Добавить еще один адрес
+
         .content-item
           h2 Подписки и уведомления
-          .content-item__check
+          .content-item__row
             input(type="checkbox", id="ch-email", class="inp-check")
             label(for="ch-email") Оповещать меня о текущих акциях по e-mail
-          .content-item__check
+          .content-item__row
             input(type="checkbox", id="ch-sms", class="inp-check")
             label(for="ch-sms") Оповещать меня о текущих акциях по sms
 
     .content-r
-      | тест
+      .social
+        h3 Социальные сети
+        p Привяжите учетную запись социальной сети и используйте ee для входа
+        .lnk
+          a(href="#", class="lnk__item lnk__item--fb") Facebook
+          a(href="#", class="lnk__item lnk__item--vk") Вконтакте
+          a(href="#", class="lnk__item lnk__item--tw") Twitter
+          a(href="#", class="lnk__item lnk__item--ok") Одноклассники
